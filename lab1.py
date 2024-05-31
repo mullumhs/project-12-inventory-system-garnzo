@@ -11,9 +11,38 @@
 # Step 1: Define the Item class with initialisation that uses setters for name, price, and quantity.
 # Instead of directly setting private attributes in the __init__ method, use the class's own setters
 # We will define the setters in later steps to add validation to the setting of these attributes.
+class Item:
+    
+    def __init__(self, Item, price, qty):
+        self._Item = Item
+        self._price = price
+        self._qty = qty
 
+    def get_item(self):
+        return self._Item
+        return self._Item
+        return self._qty
 
+    def get_price(self):
+        return self._price
 
+    def get_qty(self):
+        return self._qty
+    
+    def set_Item(self, new_item):
+        pass
+
+    def set_price(self, new_price):
+        if new_price < 0:
+            raise ValueError("New Price can't be lower than 0")
+        else:
+            self._price = new_price
+            
+    def set_qty(self, new_qty):
+        if new_qty < 0:
+            raise ValueError("Quantity can't be lower than 0")
+        else:
+            self._qty = new_qty
 
 
 # Step 2: Implement a getter for the name attribute.
