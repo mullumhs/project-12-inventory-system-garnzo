@@ -11,26 +11,35 @@
 # Step 1: Define the Item class with initialisation that uses setters for name, price, and quantity.
 # Instead of directly setting private attributes in the __init__ method, use the class's own setters
 # We will define the setters in later steps to add validation to the setting of these attributes.
+#initial class
 class Item:
     
-    def __init__(self, Item, price, qty):
-        self._Item = Item
+#inheritence
+    def __init__(self, item_name, price, qty):
+        self._item_name = item_name
         self._price = price
         self._qty = qty
 
+#getters
     def get_item(self):
-        return self._Item
-        return self._Item
-        return self._qty
-
+        return self._item_name
+        
     def get_price(self):
         return self._price
 
     def get_qty(self):
         return self._qty
     
+#setters
     def set_Item(self, new_item):
-        pass
+        if new_item == self._item_name:
+            raise ValueError("Invalid input, no Item name change detected")
+        if new_item.isdigit():
+            raise ValueError("L bozo no numbers")
+        if new_item != new_item.isalpha():
+            raise ValueError("Input is contains numbers or Invalid Characters")
+
+        self._item_name == new_item
 
     def set_price(self, new_price):
         if new_price < 0:
