@@ -16,20 +16,34 @@ from lab1 import Item
 # It should include methods to add, remove, update, and display items in the inventory.
 class InventoryManager:
     
-    def __init__(self, item_name, price, qty):
-        pass
+    def __init__(self):
+        self._items = []
 
     def add_item(self, item_name, price, qty):
-        pass
+        for item_name in self._items:
+            if item_name == self._items:
+                raise ValueError("Item already in list")
+        self._items.append(item_name)
 
     def remove_item(self, item_name):
-        pass
+        for item_name in self._items:
+            if item_name != self._items:
+                raise ValueError("Item Doesn't Exist")
+        self._items.remove(item_name)
 
     def update_item(self, item_name, new_item):
-        pass
+        for item_name in self._items:
+            if new_item != self._items:
+                raise ValueError("Item Doesn't Exist")
+        self._items.remove(item_name)
+        self._items.append(new_item)
 
-    def update_price(self, item_name, price):
-        pass
+    def update_price(self, item_name, price, new_price):
+        for item_name in self._items:
+            if item_name != self._items:
+                raise ValueError("Item Doesn't Exist")
+        self._items.remove(item_name)
+        self._items.append(item_name, new_price)
 
     def update_qty(self, item_name, qty):
         pass
@@ -44,5 +58,5 @@ class InventoryManager:
 # E.g. add items to the inventory, remove items, update items, and display the inventory.
 
 inv = InventoryManager()
-inv.add_item("Johnny Depp Cigars 3 Pack", "$150.00", 150)
+inv.add_item("Johnny Depp Cigars 3 Pack", "$150.00", 50)
 
