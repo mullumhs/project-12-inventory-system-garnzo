@@ -10,13 +10,26 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 # Step 1: Import necessary classes (Item class from lab1, InventoryManager class from lab2)
-
+from lab1 import Item
+from lab2 import InventoryManager
 
 # Step 2: Define an add_item function that prompts the user for item details and adds the item to the inventory
-
+def add_item_ui(invmanaer):
+    item_name = input("Enter item name: ")
+    item_price = float(input("Enter item price:"))
+    item_qty = int(input("Enter item Quantity: "))
+    if item_name.isdigit():
+        print("Error, Item name can't be a number")
+    if not item_price.isdigit():
+        print("Error, has to be a number")
+    if not item_qty.isdigit():
+        print("Error, Item Quantity must be a number")
+    invmanaer.add_item(item_name, item_price, item_qty)
 
 # Step 3: Define an update_item function that prompts the user for item details and updates the item in the inventory
-
+def update_item(invmanager):
+    update = input("What item would you like to update?:")
+    
 
 # Step 4: Define a remove_item function that prompts the user for an item name and removes the item from the inventory
 
@@ -26,11 +39,9 @@
 
 def main():
     # Step 6: Initialise an instance of InventoryManager
-    
+    invmanager = InventoryManager
 
     # Step 7: Use the actions dictionary to map user input to the corresponding functions
-    actions = {}
-    
     while True:
         print("\nInventory Management System")
         print("1. Add Item")
